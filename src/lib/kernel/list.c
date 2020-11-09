@@ -80,7 +80,8 @@ list_begin (struct list *list)
    undefined if ELEM is itself a list tail. */
 struct list_elem *
 list_next (struct list_elem *elem)
-{
+{ 
+
   ASSERT (is_head (elem) || is_interior (elem));
   return elem->next;
 }
@@ -111,7 +112,7 @@ list_rbegin (struct list *list)
    undefined if ELEM is itself a list head. */
 struct list_elem *
 list_prev (struct list_elem *elem)
-{
+{ 
   ASSERT (is_interior (elem) || is_tail (elem));
   return elem->prev;
 }
@@ -184,6 +185,7 @@ void
 list_splice (struct list_elem *before,
              struct list_elem *first, struct list_elem *last)
 {
+ 
   ASSERT (is_interior (before) || is_tail (before));
   if (first == last)
     return;
